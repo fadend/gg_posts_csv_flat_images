@@ -1,0 +1,21 @@
+[project]
+name = "gg-posts-csv-flat-images"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "David Faden (revfad.com)",email = "dfaden@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "gg_posts_csv_flat_images", from = "src"}]
+
+[tool.poetry.scripts]
+make_gg_post_csv = "gg_posts_csv_flat_images.make_gg_post_csv:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
