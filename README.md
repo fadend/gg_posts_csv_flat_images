@@ -11,3 +11,5 @@ WordPress or similar.
 ## Acknowledgments
 
 Used [poetry](https://python-poetry.org/) to generate package skeleton.
+
+Formatting Python with [black](https://github.com/psf/black).
