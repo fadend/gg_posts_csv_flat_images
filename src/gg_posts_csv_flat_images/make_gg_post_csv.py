@@ -35,6 +35,11 @@ def convert_to_csv(input_dir: str, output_dir: str, max_posts: int = -1):
             post_images_dir = post["images_dir"]
             html = read_file(os.path.join(input_dir, html_file))
             html = re.sub(r".*<body>\s*", "", html, flags=re.DOTALL)
+            # Strip off title
+            html = re.sub(r"<h1 class=\"post-title\">.*?</h1>\s*", "", html, flags=re.DOTALL)
+            # Strip off author info, etc. (Can be incorporated in more structured way separately.)
+            html = re.sub(r"<p class=\"post-info\">.*?</p>\s*", "", html, flags=re.DOTALL)
+            html = re.sub(r"\s*<p class=\"scrape-info\">.*?</p>", "", html, flags=re.DOTALL)
             html = re.sub(r"\s*</body>.*", "", html, flags=re.DOTALL)
             first_image = ""
 
